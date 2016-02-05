@@ -25,4 +25,8 @@ object Navigation extends Controller {
     Ok(views.html.program.index())
   }
 
+  def streaming = Action {
+    Ok(views.html.player.index())
+  }
+
 }

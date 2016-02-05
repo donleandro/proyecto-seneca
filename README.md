@@ -1,1 +1,1 @@
-# proyecto-seneca
+# ProyectoSeneca

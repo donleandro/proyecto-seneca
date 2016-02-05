@@ -14,5 +14,6 @@ dist
 /RUNNING_PID
 /.settings
 /public/components
+/public/dist
 
     
