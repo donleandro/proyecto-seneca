@@ -21,6 +21,7 @@
     "requirejs-text": "2.0.x",
     "angular-route": "^1.4.9",
     "angular-loader": "^1.4.9",
-    "angular-mocks": "^1.4.9"
+    "angular-mocks": "^1.4.9",
+    "jPlayer": "jplayer#^2.9.2"
   }
 }
