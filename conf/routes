@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Navigation
+GET     /                           controllers.Navigation.index
+GET     /home                       controllers.Navigation.home
+GET     /header                     controllers.Navigation.header
+GET     /footer                     controllers.Navigation.footer
+GET     /program                    controllers.Navigation.program
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+    
