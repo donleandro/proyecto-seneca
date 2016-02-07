@@ -15,5 +15,7 @@ dist
 /.settings
 /public/components
 /public/dist
+activator*
+
 
     

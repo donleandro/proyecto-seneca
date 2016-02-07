@@ -3,12 +3,15 @@
 # ~~~~
 
 # Navigation
-GET     /                           controllers.Navigation.index
-GET     /home                       controllers.Navigation.home
-GET     /header                     controllers.Navigation.header
-GET     /footer                     controllers.Navigation.footer
-GET     /program                    controllers.Navigation.program
-GET     /streaming                  controllers.Navigation.streaming
+GET     /                           controllers.NavigationCtrl.index
+GET     /home                       controllers.NavigationCtrl.home
+GET     /header                     controllers.NavigationCtrl.header
+GET     /footer                     controllers.NavigationCtrl.footer
+GET     /program                    controllers.NavigationCtrl.program
+GET     /streaming                  controllers.NavigationCtrl.streaming
+
+# API
+GET     /api/airplayInfo            controllers.api.StreamingInfoCtrl.getInfoFromAirPlay()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

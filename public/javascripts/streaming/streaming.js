@@ -4,8 +4,7 @@
 $(document).ready(function(){
 
     var stream = {
-            title: "ABC Jazz",
-            mp3: "http://listen.radionomy.com/abc-jazz"
+            mp3: "http://107.172.24.138:8000/airtime_128"
         },
         ready = false;
 
