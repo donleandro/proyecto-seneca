@@ -11,7 +11,7 @@ GET     /program                    controllers.NavigationCtrl.program
 GET     /streaming                  controllers.NavigationCtrl.streaming
 
 # API
-GET     /api/airplayInfo            controllers.api.StreamingInfoCtrl.getInfoFromAirPlay()
+GET     /api/airtimeInfo            controllers.api.StreamingInfoCtrl.getInfoFromAirPlay()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

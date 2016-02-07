@@ -26,8 +26,8 @@ class StreamingInfo {
   def getInfoFromAirPlay: Future[StreamInfo] ={
 
     WS.url(AirTimeUrl).get().map{
-      APresponse =>
-        val jResponse = APresponse.json
+      APResponse =>
+        val jResponse = APResponse.json
         val currentShow = (jResponse \ "currentShow").as[List[JsValue]].headOption.map(_.as[APProgram]).orNull
         if( (jResponse \ "current" \ "name").as[String] != ""
           && (jResponse \ "current" \ "type").as[String] == "track"){
@@ -36,13 +36,9 @@ class StreamingInfo {
           WS.url(LastFMUrl+songNameInfo(1)+"&artist="+songNameInfo(0)).get()
             .map{
               LFMResponse =>
-                val imgURL = scala.xml.XML.loadString(LFMResponse.body) \ "track" \\ "image"
-                if(imgURL.isEmpty){
-                  StreamInfo(currentShow, Song(songNameInfo(1), songNameInfo(0), null))
-                }
-                else{
-                  StreamInfo(currentShow, Song(songNameInfo(1), songNameInfo(0), imgURL.last.text))
-                }
+                val imgURL = (scala.xml.XML.loadString(LFMResponse.body) \ "track" \\ "image")
+                  .lastOption.map(_.text).orNull
+                StreamInfo(currentShow, Song(songNameInfo(1), songNameInfo(0), imgURL))
             }
         }
         else{
