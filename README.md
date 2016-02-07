@@ -20,7 +20,7 @@ $ ./activator ~run
 
 | Route            | Parameters    | Method  |
 | :-------------:  |:-------------:| :-----: |
-| /api/airplayInfo | none          | Get     |
+| /api/airtimeInfo | none          | Get     |
 
 ##### Response
 ```json
