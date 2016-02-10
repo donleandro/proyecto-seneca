@@ -1,5 +1,5 @@
 /**
- * Created by davidmesa on 2/6/16.
+ * Created by jsrolon on 2/6/16.
  */
 $(document).ready(function () {
     getSongInfo(0); // get the info immediately

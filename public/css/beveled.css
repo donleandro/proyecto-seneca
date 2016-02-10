@@ -1,0 +1,90 @@
+.beveled {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.img-logo {
+    margin-top: 17px;
+    margin-left: 10px;
+}
+
+.play-btn {
+    background: url("../images/btnPlayPlayer.png");
+    cursor:pointer;
+    border: none;
+    margin-left: 38px;
+    margin-top: 16px;
+    height: 51px;
+    width: 52px;
+}
+
+.volume-btn {
+    background: url("../images/btnVolumenPlayer.png");
+    cursor:pointer;
+    border: none;
+    margin-top: 17px;
+    margin-left: 15px;
+    height: 48px;
+    width: 55px;
+}
+
+.progressSize {
+    height: 15px;
+    margin: 10px 9px 10px 9px;
+}
+
+.progressGray {
+    background-color: gray;
+}
+
+.informationDiv {
+    background-color: darkgray;
+    height: 406px;
+    padding-top: 10px;
+}
+
+.informationBox {
+    margin-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 300px;
+}
+
+.programImageDiv {
+    padding: 0;
+    background-color: white;
+    width: 300px;
+}
+
+.programContentDiv {
+    padding: 0;
+    background-color: white;
+    height: 70px;
+    width: 300px;
+}
+
+.onAirDiv {
+    border-radius: 10px;
+    margin-left: -7px;
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    height: 27px;
+    width: 80px;
+}
+
+.onAirDiv img {
+    margin: 5px;
+}
+
+.onAirText{
+    padding-top: 4px;
+    padding-left:10px;
+}
+
+.onAirName {
+    margin-top: 20px;
+    margin-left: -10px;
+    font-size: 18px;
+    font-weight: bold;
+}
