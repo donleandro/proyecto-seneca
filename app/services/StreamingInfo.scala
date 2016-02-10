@@ -33,12 +33,13 @@ class StreamingInfo {
           && (jResponse \ "current" \ "type").as[String] == "track"){
           val currentSong = (jResponse \ "current").as[APSong]
           val songNameInfo = currentSong.name.split("-").map(_.trim)
+          val endTime = currentSong.ends
           WS.url(LastFMUrl+songNameInfo(1)+"&artist="+songNameInfo(0)).get()
             .map{
               LFMResponse =>
                 val imgURL = (scala.xml.XML.loadString(LFMResponse.body) \ "track" \\ "image")
                   .lastOption.map(_.text).orNull
-                StreamInfo(currentShow, Song(songNameInfo(1), songNameInfo(0), imgURL))
+                StreamInfo(currentShow, Song(songNameInfo(1), songNameInfo(0), imgURL, endTime))
             }
         }
         else{

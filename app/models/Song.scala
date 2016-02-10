@@ -7,5 +7,6 @@ package models
 case class Song (
                   name: String,
                   author: String,
-                  url: String
+                  url: String,
+                  ends: String
                 )
