@@ -17,8 +17,15 @@ define([
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
     }]).
-    controller('HeaderCtrl', ['$scope', function($scope){
+    controller('HeaderCtrl', ['$scope','$window', function($scope,$window){
         $scope.test = "Esto es un header con angular"
+        
+        $scope.listenClick = function () {
+            var height=499;
+            var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+            if(isSafari) height = height + 47;
+            $window.open('/streaming', 'PSPlayer', 'height='+height+',width=320');
+        }
     }]).
     controller('FooterCtrl', ['$scope', function($scope){
         $scope.test = "Esto es un footer con angular"
