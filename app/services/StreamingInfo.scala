@@ -28,7 +28,7 @@ class StreamingInfo {
     WS.url(AirTimeUrl).get().map{
       APResponse =>
         val jResponse = APResponse.json
-        val currentShow = (jResponse \ "currentShow").as[List[JsValue]].headOption.map(_.as[APProgram]).orNull
+        val currentShow = (jResponse \ "currentShow").as[List[JsValue]].headOption.map(_.as[APProgram]).orElse(None)
         if( (jResponse \ "current" \ "name").as[String] != ""
           && (jResponse \ "current" \ "type").as[String] == "track"){
           val currentSong = (jResponse \ "current").as[APSong]
@@ -39,11 +39,12 @@ class StreamingInfo {
               LFMResponse =>
                 val imgURL = (scala.xml.XML.loadString(LFMResponse.body) \ "track" \\ "image")
                   .lastOption.map(_.text).orNull
-                StreamInfo(currentShow, Song(songNameInfo(1), songNameInfo(0), imgURL, endTime))
+                println(imgURL)
+                StreamInfo(currentShow, Some(Song(songNameInfo(1), songNameInfo(0), imgURL, endTime)))
             }
         }
         else{
-          Future(StreamInfo(currentShow, null))
+          Future(StreamInfo(currentShow, None))
         }
     }.flatMap(x=>x)
   }

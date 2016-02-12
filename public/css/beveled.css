@@ -4,8 +4,13 @@
     padding: 0;
 }
 
+.main-div{
+    height: 500px;
+    width: 320px;
+}
+
 .img-logo {
-    margin-top: 17px;
+    margin-top: 19px;
     margin-left: 10px;
 }
 

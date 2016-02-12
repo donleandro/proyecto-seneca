@@ -19,7 +19,6 @@ function getSongInfo(delay) {
             // calculate next delay
             var endTime = new Date(airtimeInfo.song.ends.replace(" ", "T") + "Z");
             var currentTime = new Date();
-            console.log(endTime);
             getSongInfo((endTime - currentTime) + 1000);
         });
     }, delay);
