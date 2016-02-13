@@ -130,14 +130,13 @@ button:focus {outline:0;}
 .song-picture-wrapper {
     position: absolute;
     height: 0;
+    overflow: hidden;
 
     transition: height 2s;
 }
 
 #song-picture {
-    opacity: 0;
-
-    transition: opacity 2s;
+    background-color: black;
 }
 
 .song-info-text {
@@ -148,7 +147,7 @@ button:focus {outline:0;}
     background-color: rgba(0,0,0,0.8);
     opacity: 0;
 
-    transition: opacity 3.5s ease-in-out;
+    transition: opacity 3.5s ease-in, opacity 1s ease-out;
     padding: 5px;
 }
 
@@ -166,6 +165,6 @@ button:focus {outline:0;}
 
 #program-image {
     margin-top: 0;
-
-    transition: margin-top 2s;
 }
+
+
