@@ -67,6 +67,8 @@ button:focus {outline:0;}
     background-color: darkgray;
     height: 396px;
     padding-top: 10px;
+
+    transition: height 2s;
 }
 
 .informationBox {
@@ -79,6 +81,9 @@ button:focus {outline:0;}
     padding: 0;
     background-color: white;
     width: 300px;
+    height: 300px;
+
+    transition: height 2s;
 }
 
 .programContentDiv {
@@ -112,4 +117,55 @@ button:focus {outline:0;}
     margin-left: -10px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.song-info-panel {
+    padding: 0;
+    position: relative;
+    height: 0;
+
+    transition: height 2s;
+}
+
+.song-picture-wrapper {
+    position: absolute;
+    height: 0;
+
+    transition: height 2s;
+}
+
+#song-picture {
+    opacity: 0;
+
+    transition: opacity 2s;
+}
+
+.song-info-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #FFF;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+
+    transition: opacity 3.5s ease-in-out;
+    padding: 5px;
+}
+
+.song-info-text p {
+    margin: 0;
+}
+
+#song-name {
+    font-style: italic;
+}
+
+#song-artist {
+    font-weight: bold;
+}
+
+#program-image {
+    margin-top: 0;
+
+    transition: margin-top 2s;
 }
