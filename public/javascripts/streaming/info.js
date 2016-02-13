@@ -16,6 +16,8 @@ function showSongInfo(songInfo) {
         $("#song-picture").css("opacity", 1);
     } else {
         $("#program-image").css("margin-top", "70px");
+        $("#song-picture").css("opacity", 0);
+        $("#song-picture-wrapper").height(0);
     }
     $(".song-info-text").css("opacity", 1);
 }
