@@ -18,10 +18,7 @@ object StreamingInfoCtrl extends Controller{
 
   def getInfoFromAirPlay = Cached( requestParameter(_) , 10){
     Action.async {
-      streamingInfo.getInfoFromAirPlay.map({info =>
-        println(info)
-        Ok(Json.toJson(info))
-      })
+      streamingInfo.getInfoFromAirPlay.map({info => Ok(Json.toJson(info))})
     }
   }
 
