@@ -1,6 +1,10 @@
 @(message: String)
-@views.html.main("Seneca Project"){
-    <div ng-include="'/header'" ng-controller="HeaderCtrl"></div>
-    <div ng-view></div>
-    <div ng-include="'/footer'" ng-controller="FooterCtrl"></div>
-}
+    @views.html.main("Seneca Project"){
+        <div id="wrap">
+            <div id="main">
+                <div ng-include="'/header'" ng-controller="HeaderCtrl"></div>
+                <div ng-view></div>
+            </div>
+        </div>
+        <div ng-include="'/footer'" ng-controller="FooterCtrl"></div>
+    }
