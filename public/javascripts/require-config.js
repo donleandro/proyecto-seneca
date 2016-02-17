@@ -3,6 +3,8 @@
  */
 require.config({
     paths: {
+        jquery: '../components/jquery/dist/jquery.min',
+        bootstrap: '../dist/js/bootstrap.min',
         angular: '../components/angular/angular',
         angularRoute: '../components/angular-route/angular-route',
         angularMocks: '../components/angular-mocks/angular-mocks',
@@ -10,6 +12,7 @@ require.config({
     },
     shim: {
         'angular' : {'exports' : 'angular'},
+        'bootstrap' : { "deps" :['jquery'] },
         'angularRoute': ['angular'],
         'angularMocks': {
             deps:['angular'],

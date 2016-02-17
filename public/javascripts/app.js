@@ -5,10 +5,12 @@
 
 define([
     'angular',
+    'jquery',
+    'bootstrap',
     'angularRoute',
     'Home/module',
     'Program/module'
-], function(angular) {
+], function(angular, $) {
     return angular.module('radio', [
         'ngRoute',
         'radio.home',
@@ -18,7 +20,8 @@ define([
         $routeProvider.otherwise({redirectTo: '/'});
     }]).
     controller('HeaderCtrl', ['$scope','$window', function($scope,$window){
-        $scope.test = "Esto es un header con angular"
+        $scope.test = "Esto es un header con angular";
+
         
         $scope.listenClick = function () {
             var height=499;

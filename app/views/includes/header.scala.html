@@ -1,2 +1,39 @@
-<p>{{test}}</p>
-    <button ng-click="listenClick()">Escuchar</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1 vertical-center"></div><!--
+    --><div class="col-sm-1 vertical-center">
+            <img src="@routes.Assets.at("images/logoUniandes.png")" class="img-responsive logo-university center-block" alt="Universidad de los Andes">
+        </div><!--
+    --><div class="col-sm-2 vertical-center"></div><!--
+    --><div class="col-sm-4 vertical-center">
+            <img src="@routes.Assets.at("images/logoEmisora.png")" class="img-responsive logo-radio center-block" alt="Proyecto Seneca">
+        </div><!--
+    --><div class="col-sm-4 vertical-center">
+            <div class="player-wrapper">
+                <div class="row player-name-wrapper">
+                    <div class="col-sm-9 text-center player-name">
+                        Nombre de la canción
+                    </div>
+                    <div class="col-sm-3 player-btn-wrapper">
+                        <button ng-click="listenClick()" class="player-btn">Escuchar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 nar-bar-divider"></div>
+        <div class="col-sm-offset-1 col-sm-10">
+            <div class="span12 centered-pills">
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="#">Programas</a></li>
+                    <li role="presentation"><a href="#">La Emisora</a></li>
+                    <li role="presentation"><a href="#">Sponsors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-offset-1 col-sm-10 nar-bar-divider-end text-center">
+            <p>La hacemos todos</p>
+        </div>
+    </div>
+</div>
