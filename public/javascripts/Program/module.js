@@ -8,7 +8,7 @@ define([
 ], function(angular) {
     angular.module('radio.program', ['ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.when('/program/:program', {
+            $routeProvider.when('/programs/:program', {
                 templateUrl: '/program',
                 controller: 'ProgramCtrl'
             });
