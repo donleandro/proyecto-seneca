@@ -8,7 +8,8 @@ require.config({
         angular: '../components/angular/angular',
         angularRoute: '../components/angular-route/angular-route',
         angularMocks: '../components/angular-mocks/angular-mocks',
-        text: '../components/requirejs-text/text'
+        text: '../components/requirejs-text/text',
+        plangular: '../components/plangular/dist/plangular.min'
     },
     shim: {
         'angular' : {'exports' : 'angular'},

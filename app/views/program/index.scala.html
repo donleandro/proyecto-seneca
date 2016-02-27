@@ -18,17 +18,63 @@
     </div>
     <div class="row">
         <div class="col-sm-8">
-            <div class="col-xs-3" style="text-align: right">
-                <h3>Capitulo 4</h3>
-                <h6>Abril 10</h6>
+
+            <div plangular="{{urlProgram}}" class="col-xs-12 program-episode-wrap">
+                <div class="col-xs-3" style="text-align: right">
+                    <h3>{{track.title}}</h3>
+                    <h6>Abril 10</h6>
+                    <button ng-click="playPause()" class="program-play-btn"><img src="@routes.Assets.at("images/btnProgramPlay.png")"></button>
+                </div>
+                <div class="col-xs-9">
+                    <div class="program-tag-count-wrap">
+                        <div class="program-tags">
+                            <p>#perro</p>
+                            <p>#mugre</p>
+                            <p>#distopia</p>
+                        </div>
+                        <div class=" program-count">
+                            <img style="display: inline-block;" src="@routes.Assets.at("images/view.png")">
+                            <p style="display: inline-block;">{{track.playback_count}}</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="program-waveform-wrap" ng-if="track">
+                            <div class="program-waveform-progress" style="width:{{ 100 * (currentTime / duration) || 0 }}%"></div>
+                            <img ng-src="{{track.waveform_url}}" alt="{{track.title}} waveform" class="program-waveform-img"/>
+                            <div class="program-waveform-seek" ng-click="seek($event)"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-9">
-                <iframe id="sc-widget" name="sc-widget"
-                src="https://w.soundcloud.com/player/?url=https://soundcloud.com/samfeldt/sam-feldt-lulleaux-all-the-kids320"
-                width="100%" scrolling="no" frameborder="no"
-                ></iframe>
+
+            <div plangular="https://soundcloud.com/msmsmsm/sophie-hard" class="col-xs-12 program-episode-wrap">
+                <div class="col-xs-3" style="text-align: right">
+                    <h3>{{track.title}}</h3>
+                    <h6>Abril 10</h6>
+                    <button ng-click="playPause()" class="program-play-btn"><img src="@routes.Assets.at("images/btnProgramPlay.png")"></button>
+                </div>
+                <div class="col-xs-9">
+                    <div class="program-tag-count-wrap">
+                        <div class="program-tags">
+                            <p>#perro</p>
+                            <p>#mugre</p>
+                            <p>#distopia</p>
+                        </div>
+                        <div class=" program-count">
+                            <img style="display: inline-block;" src="@routes.Assets.at("images/view.png")">
+                            <p style="display: inline-block;">{{track.playback_count}}</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="program-waveform-wrap" ng-if="track">
+                            <div class="program-waveform-progress" style="width:{{ 100 * (currentTime / duration) || 0 }}%"></div>
+                            <img ng-src="{{track.waveform_url}}" alt="{{track.title}} waveform" class="program-waveform-img"/>
+                            <div class="program-waveform-seek" ng-click="seek($event)"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
-<script src='//w.soundcloud.com/player/api.js'></script>

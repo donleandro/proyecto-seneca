@@ -22,6 +22,6 @@
     "angular-route": "^1.4.9",
     "angular-loader": "^1.4.9",
     "angular-mocks": "^1.4.9",
-    "jPlayer": "jplayer#^2.9.2"
+    "plangular": "^3.1.2"
   }
 }
