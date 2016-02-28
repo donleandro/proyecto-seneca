@@ -7,15 +7,32 @@
                     <li role="presentation"><a href="#">Prensa</a></li>
                     <li role="presentation"><a href="#">FQA</a></li>
                     <li role="presentation"><a href="#">Contactanos</a></li>
-                    <li role="presentation"><a href="#">Suscribete</a></li>
+                    <li role="presentation"><a ng-click="mailingList()">Suscribete</a></li>
                     <li role="presentation"><a href="#">Staff</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" ng-if="!mailingListToggle">
         <div class="col-sm-12">
             <img src="@routes.Assets.at("images/logoGris.png")" class="img-responsive footer-logo">
         </div>
+    </div>
+    <div ng-if="mailingListToggle" class="footer-subscribe-wrap">
+            <!-- Begin MailChimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <div id="mc_embed_signup">
+            <form action="//proyectoseneca.us12.list-manage.com/subscribe/post?u=60ded08a77312bf0f6ebab015&amp;id=04afd9f39e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_60ded08a77312bf0f6ebab015_04afd9f39e" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" ng-click="mailingList()"></div>
+                </div>
+            </form>
+        </div>
+
+            <!--End mc_embed_signup-->
     </div>
 </div>

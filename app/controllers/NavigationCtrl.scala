@@ -28,4 +28,8 @@ object NavigationCtrl extends Controller {
     Ok(views.html.player.index())
   }
 
+  def aboutUs = Action {
+    Ok(views.html.aboutUs())
+  }
+
 }

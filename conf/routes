@@ -9,6 +9,7 @@ GET     /header                     controllers.NavigationCtrl.header
 GET     /footer                     controllers.NavigationCtrl.footer
 GET     /program                    controllers.NavigationCtrl.program
 GET     /streaming                  controllers.NavigationCtrl.streaming
+GET     /aboutUs                    controllers.NavigationCtrl.aboutUs
 
 # API
 GET     /api/airtimeInfo            controllers.api.StreamingInfoCtrl.getInfoFromAirPlay()
