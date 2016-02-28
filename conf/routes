@@ -4,11 +4,12 @@
 
 # Navigation
 GET     /                           controllers.NavigationCtrl.main(any = "none")
+GET     /streaming                  controllers.NavigationCtrl.streaming
 GET     /views/home                 controllers.NavigationCtrl.home
 GET     /views/header               controllers.NavigationCtrl.header
 GET     /views/footer               controllers.NavigationCtrl.footer
+GET     /views/programs             controllers.NavigationCtrl.programs
 GET     /views/program              controllers.NavigationCtrl.program
-GET     /views/streaming            controllers.NavigationCtrl.streaming
 GET     /views/aboutUs              controllers.NavigationCtrl.aboutUs
 
 # API

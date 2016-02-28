@@ -20,8 +20,12 @@ object NavigationCtrl extends Controller {
     Ok(views.html.home.index())
   }
 
-  def program = Action {
+  def programs = Action {
     Ok(views.html.program.index())
+  }
+
+  def program = Action {
+    Ok(views.html.program.program())
   }
 
   def streaming = Action {
