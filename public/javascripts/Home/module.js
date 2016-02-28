@@ -9,7 +9,7 @@ define([
     angular.module('radio.home', ['ngRoute'])
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.when('/', {
-                templateUrl: '/home',
+                templateUrl: '/views/home',
                 controller: 'HomeCtrl'
             });
         }])

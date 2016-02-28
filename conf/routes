@@ -3,13 +3,13 @@
 # ~~~~
 
 # Navigation
-GET     /                           controllers.NavigationCtrl.index
-GET     /home                       controllers.NavigationCtrl.home
-GET     /header                     controllers.NavigationCtrl.header
-GET     /footer                     controllers.NavigationCtrl.footer
-GET     /program                    controllers.NavigationCtrl.program
-GET     /streaming                  controllers.NavigationCtrl.streaming
-GET     /aboutUs                    controllers.NavigationCtrl.aboutUs
+GET     /                           controllers.NavigationCtrl.main(any = "none")
+GET     /views/home                 controllers.NavigationCtrl.home
+GET     /views/header               controllers.NavigationCtrl.header
+GET     /views/footer               controllers.NavigationCtrl.footer
+GET     /views/program              controllers.NavigationCtrl.program
+GET     /views/streaming            controllers.NavigationCtrl.streaming
+GET     /views/aboutUs              controllers.NavigationCtrl.aboutUs
 
 # API
 GET     /api/airtimeInfo            controllers.api.StreamingInfoCtrl.getInfoFromAirPlay()
@@ -17,4 +17,5 @@ GET     /api/airtimeInfo            controllers.api.StreamingInfoCtrl.getInfoFro
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
-    
+# AngularJS Routing
+GET     /*any                       controllers.NavigationCtrl.main(any)

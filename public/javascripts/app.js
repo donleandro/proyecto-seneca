@@ -12,13 +12,16 @@ define([
         'ngRoute', '720kb.socialshare',
         'radio.home', 'radio.program'
     ]).
-    config(['$routeProvider', function($routeProvider) {
+    config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
 
         $routeProvider.when('/aboutUs', {
-            templateUrl: '/aboutUs'
+            templateUrl: '/views/aboutUs'
         });
 
         $routeProvider.otherwise({redirectTo: '/'});
+
+        // use the HTML5 History API
+        $locationProvider.html5Mode(true);
     }]).
     controller('HeaderCtrl', ['$scope','$window', '$location', function($scope,$window, $location){
 

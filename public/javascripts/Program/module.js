@@ -10,7 +10,7 @@ define([
     angular.module('radio.program', ['ngRoute', 'plangular'])
         .config(['$routeProvider', 'plangularConfigProvider', function($routeProvider, plangularConfigProvider) {
             $routeProvider.when('/programs/:program', {
-                templateUrl: '/program',
+                templateUrl: '/views/program',
                 controller: 'ProgramCtrl'
             });
             plangularConfigProvider.clientId = 'ddb5c1c24a58abe1a706af0425eda325';
