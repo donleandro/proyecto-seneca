@@ -15,7 +15,9 @@ define([
             });
             plangularConfigProvider.clientId = 'ddb5c1c24a58abe1a706af0425eda325';
         }])
-        .controller('ProgramCtrl', ['$scope', '$routeParams',function($scope, $routeParams) {
-            $scope.urlProgram = "https://soundcloud.com/iamlpmusic/lost-on-you";
+        .controller('ProgramCtrl', ['$scope',function($scope) {
+            $scope.urlPrograms = [];
+            $scope.urlPrograms[0] = "https://soundcloud.com/iamlpmusic/lost-on-you";
+            $scope.urlPrograms[1] = "https://soundcloud.com/msmsmsm/sophie-hard"
         }]);
 });

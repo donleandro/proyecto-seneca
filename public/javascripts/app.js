@@ -8,11 +8,13 @@ define([
     'jquery',
     'bootstrap',
     'angularRoute',
+    'socialShare',
     'Home/module',
     'Program/module'
 ], function(angular, $) {
     return angular.module('radio', [
         'ngRoute',
+        '720kb.socialshare',
         'radio.home',
         'radio.program'
     ]).

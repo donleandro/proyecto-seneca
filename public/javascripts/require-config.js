@@ -9,7 +9,8 @@ require.config({
         angularRoute: '../components/angular-route/angular-route',
         angularMocks: '../components/angular-mocks/angular-mocks',
         text: '../components/requirejs-text/text',
-        plangular: '../components/plangular/dist/plangular.min'
+        plangular: '../components/plangular/dist/plangular.min',
+        socialShare: '../components/angular-socialshare/dist/angular-socialshare.min'
     },
     shim: {
         'angular' : {'exports' : 'angular'},
