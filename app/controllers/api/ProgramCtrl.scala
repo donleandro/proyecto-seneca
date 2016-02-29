@@ -23,6 +23,12 @@ object ProgramCtrl extends Controller{
     }
   }
 
+  def getProgram(slug: String) = Cached( requestParameter(_) , 14400) {
+    Action.async {
+      programService.getProgram(slug).map({program => Ok(Json.toJson(program))})
+    }
+  }
+
   def requestParameter(header: RequestHeader): String ={
     header.toString()
   }

@@ -12,3 +12,14 @@ case class Program (
                      producers: List[String],
                      email: String
                    )
+
+case class ProgramExtended (
+                             slug : String,
+                             name: String,
+                             slogan: String,
+                             image: String,
+                             description: String,
+                             producers: List[String],
+                             email: String,
+                             episodes: List[Episode]
+                           )
