@@ -17,7 +17,7 @@ object ProgramCtrl extends Controller{
   //Imports
   val programService = new Program
 
-  def getPrograms = Cached( requestParameter(_) , 10) {
+  def getPrograms = Cached( requestParameter(_) , 14400) {
     Action.async {
       programService.getPrograms().map({programs => Ok(Json.toJson(programs))})
     }

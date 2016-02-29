@@ -24,7 +24,7 @@ class Program {
           category =>
             (category \ "id").as[Int]
         }.mkString(",")
-        WS.url(WordPressUrl+"=get_posts&cat="+categoriesId+"&post_type=program&count=100")
+        WS.url(WordPressUrl+"get_posts&cat="+categoriesId+"&post_type=program&count=100")
           .get().map({
           programResponse =>
             (programResponse.json \ "posts").as[List[JsValue]].map({
@@ -35,6 +35,7 @@ class Program {
                     (attachment \ "id").as[Int] -> (attachment \ "url").as[String]
                 }).toMap
                 Program(
+                  (program\"slug").as[String],
                   (program\"title").as[String],
                   (customFields \ "slogan").as[List[String]].head,
                   images((customFields \ "image").as[List[String]].head.toInt),

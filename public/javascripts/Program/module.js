@@ -5,9 +5,10 @@
 define([
     'angular',
     'angularRoute',
-    'plangular'
+    'plangular',
+    'Program/services'
 ], function(angular) {
-    angular.module('radio.program', ['ngRoute', 'plangular'])
+    angular.module('radio.program', ['ngRoute', 'plangular', 'programServices'])
         .config(['$routeProvider', 'plangularConfigProvider', function($routeProvider, plangularConfigProvider) {
             $routeProvider.when('/programs', {
                 templateUrl: '/views/programs',
@@ -19,7 +20,13 @@ define([
             });
             plangularConfigProvider.clientId = 'ddb5c1c24a58abe1a706af0425eda325';
         }])
-        .controller('ProgramsCtrl', ['$scope', '$location', function($scope, $location) {
+        .controller('ProgramsCtrl', ['$scope', '$location', 'Programs',
+            function($scope, $location, Programs) {
+
+            Programs.programs().$promise.then(function(programs){
+                $scope.programs = programs;
+            });
+
             $scope.go = function ( path ) {
                 $location.path( path )
             };
