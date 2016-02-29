@@ -40,7 +40,7 @@ class Program {
                   (program\"title").as[String],
                   (customFields \ "slogan").as[List[String]].head,
                   images((customFields \ "image").as[List[String]].head.toInt),
-                  (customFields \ "description").as[List[String]].head,
+                  (customFields \ "description").as[List[String]].head.replace("\r\n", "<br>"),
                   (customFields \ "producer").as[List[String]].head.split(";").toList,
                   (customFields \ "email").as[List[String]].head
                 )
@@ -80,7 +80,7 @@ class Program {
               (program\"title").as[String],
               (customFields \ "slogan").as[List[String]].head,
               images((customFields \ "image").as[List[String]].head.toInt),
-              (customFields \ "description").as[List[String]].head,
+              (customFields \ "description").as[List[String]].head.replace("\r\n", "<br>"),
               (customFields \ "producer").as[List[String]].head.split(";").toList,
               (customFields \ "email").as[List[String]].head,
               episodes

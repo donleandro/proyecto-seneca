@@ -6,15 +6,16 @@ define([
     'angular',
     'angularRoute',
     'plangular',
-    'Program/services'
+    'Program/services',
+    'angularSanitize'
 ], function(angular) {
-    angular.module('radio.program', ['ngRoute', 'plangular', 'programServices'])
+    angular.module('radio.program', ['ngRoute', 'plangular', 'programServices', 'ngSanitize'])
         .config(['$routeProvider', 'plangularConfigProvider', function($routeProvider, plangularConfigProvider) {
             $routeProvider.when('/programs', {
                 templateUrl: '/views/programs',
                 controller: 'ProgramsCtrl'
             });
-            $routeProvider.when('/programs/:program', {
+            $routeProvider.when('/programs/:slug', {
                 templateUrl: '/views/program',
                 controller: 'ProgramCtrl'
             });
@@ -31,9 +32,9 @@ define([
                 $location.path( path )
             };
         }])
-        .controller('ProgramCtrl', ['$scope',function($scope) {
-            $scope.urlPrograms = [];
-            $scope.urlPrograms[0] = "https://soundcloud.com/iamlpmusic/lost-on-you";
-            $scope.urlPrograms[1] = "https://soundcloud.com/msmsmsm/sophie-hard"
+        .controller('ProgramCtrl', ['$scope', '$routeParams', 'Programs',function($scope, $routeParams, Programs) {
+            Programs.program($routeParams).$promise.then(function(program){
+                $scope.program = program;
+            });
         }]);
 });

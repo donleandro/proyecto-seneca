@@ -9,6 +9,7 @@ require.config({
         angularRoute: '../components/angular-route/angular-route',
         angularMocks: '../components/angular-mocks/angular-mocks',
         angularResource: '../components/angular-resource/angular-resource.min',
+        angularSanitize: '../components/angular-sanitize/angular-sanitize.min',
         text: '../components/requirejs-text/text',
         plangular: '../components/plangular/dist/plangular.min',
         socialShare: '../components/angular-socialshare/dist/angular-socialshare.min'
@@ -22,6 +23,8 @@ require.config({
             'exports':'angular.mock'
         },
         'angularResource' : { "deps" : ['angular']},
+        'angularSanitize' : { "deps" : ['angular']},
+        'plangular' : { "deps" : ['angular']},
         'socialShare' : { "deps" : ['angular'] }
     },
     priority: [
