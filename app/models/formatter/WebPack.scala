@@ -12,5 +12,6 @@ object WebPack {
   implicit val songFormat = Json.format[Song]
   implicit val aPProgramFormat = Json.format[APProgram]
   implicit val streamInfoFormat = Json.format[StreamInfo]
+  implicit val programFormat = Json.format[Program]
 
 }
