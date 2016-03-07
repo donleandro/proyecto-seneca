@@ -14,7 +14,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 @Singleton
 class Program {
 
-  val WordPressUrl = "http://wordpress.proyectoseneca.co/?json="
+  val WordPressUrl = "http://wordpress.proyectoseneca.com/?json="
   val format = new java.text.SimpleDateFormat("yyyyMMdd")
 
   def getPrograms(): Future[List[models.Program]] = {
