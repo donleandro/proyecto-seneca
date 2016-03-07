@@ -23,7 +23,7 @@
           <div class="col-sm-3 col-xs-12 program-episode-left-wrap">
             <h3>{{episode.title}}</h3>
             <h6>Abril 10</h6>
-            <button ng-click="playPause()" class="program-play-btn"><img src="@routes.Assets.at("images/btnProgramPlay.png")"></button>
+            <button ng-click="playPause()" class="program-play-btn"><img src="@routes.Assets.versioned("images/btnProgramPlay.png")"></button>
             <div class="row">
               <div class="col-sm-5 col-xs-7 text-left">
                             </div>
@@ -36,7 +36,7 @@
                   socialshare-text="720kb AngularJS Socialshare"
                   socialshare-hashtags="angularjs, angular-socialshare"
                   socialshare-url="{{episode.soundcloudUrl}}">
-                    <img src="@routes.Assets.at("images/twitter.png")" class="img-responsive">
+                    <img src="@routes.Assets.versioned("images/twitter.png")" class="img-responsive">
                   </a>
                 </div>
                 <div class="col-xs-3">
@@ -45,7 +45,7 @@
                   socialshare-provider="facebook"
                   socialshare-description="720kb AngularJS Socialshare"
                   socialshare-url="{{episode.soundcloudUrl}}">
-                    <img src="@routes.Assets.at("images/facebook.png")" class="img-responsive">
+                    <img src="@routes.Assets.versioned("images/facebook.png")" class="img-responsive">
                   </a>
                 </div>
                 <div class="col-xs-3">
@@ -55,7 +55,7 @@
                   socialshare-text="720kb"
                   socialshare-url="{{episode.soundcloudUrl}}"
                   socialshare-description="Description muy completa">
-                    <img src="@routes.Assets.at("images/linkedin.png")" class="img-responsive">
+                    <img src="@routes.Assets.versioned("images/linkedin.png")" class="img-responsive">
                   </a>
                 </div>
                 <div class="col-xs-3">
@@ -64,7 +64,7 @@
                   socialshare-provider="tumblr"
                   socialshare-text="720kb AngularJS Socialshare"
                   socialshare-url="{{episode.soundcloudUrl}}">
-                    <img src="@routes.Assets.at("images/tumblr.png")" class="img-responsive">
+                    <img src="@routes.Assets.versioned("images/tumblr.png")" class="img-responsive">
                   </a>
                 </div>
               </div>
@@ -76,7 +76,7 @@
                   <p ng-repeat="tag in episode.tags">#{{tag}}</p>
               </div>
               <div class=" program-count">
-                <img style="display: inline-block;" src="@routes.Assets.at("images/view.png")">
+                <img style="display: inline-block;" src="@routes.Assets.versioned("images/view.png")">
                 <p style="display: inline-block;">{{track.playback_count}}</p>
               </div>
             </div>

@@ -18,7 +18,7 @@ GET     /api/programs               controllers.api.ProgramCtrl.getPrograms()
 GET     /api/programs/:slug         controllers.api.ProgramCtrl.getProgram(slug:String)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # AngularJS Routing
 GET     /*any                       controllers.NavigationCtrl.main(any)

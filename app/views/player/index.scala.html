@@ -3,9 +3,9 @@
 <html>
     <head>
         <title>Proyecto Seneca Al Aire</title>
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("dist/css/bootstrap.min.css")">
-        <link rel="stylesheet" type="text/css" href="@routes.Assets.at("css/beveled.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("dist/css/bootstrap.min.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("css/beveled.css")">
     </head>
     <body>
         <div class="main-div">
@@ -24,7 +24,7 @@
                             <div class="jp-gui jp-interface">
                                 <div class="row beveled">
                                     <div class="col-xs-6 beveled">
-                                        <img height="42" width="162" class="img-logo" src="@routes.Assets.at("images/logoPlayer.png")">
+                                        <img height="42" width="162" class="img-logo" src="@routes.Assets.versioned("images/logoPlayer.png")">
                                     </div>
                                     <div class="col-xs-3 beveled">
                                         <div class="jp-controls">
@@ -62,7 +62,7 @@
                                 <div class="col-xs-4 beveled">
                                     <div class="row onAirDiv">
                                         <div class="col-xs-3 beveled">
-                                            <img src="@routes.Assets.at("images/alAire.png")" height="17" width="17">
+                                            <img src="@routes.Assets.versioned("images/alAire.png")" height="17" width="17">
                                         </div>
                                         <div class="col-xs-9 beveled onAirText">
                                             <p>On Air</p>
@@ -89,10 +89,10 @@
                 </div>
             </div>
         </div>
-        <script src="@routes.Assets.at("components/jquery/dist/jquery.min.js")"></script>
-        <script src="@routes.Assets.at("dist/js/bootstrap.min.js")"></script>
-        <script src="@routes.Assets.at("components/jPlayer/dist/jplayer/jquery.jplayer.min.js")"></script>
-        <script src="@routes.Assets.at("javascripts/streaming/streaming.js")"></script>
-        <script src="@routes.Assets.at("javascripts/streaming/info.js")"></script>
+        <script src="@routes.Assets.versioned("components/jquery/dist/jquery.js")"></script>
+        <script src="@routes.Assets.versioned("dist/js/bootstrap.js")"></script>
+        <script src="@routes.Assets.versioned("components/jPlayer/dist/jplayer/jquery.jplayer.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/streaming/streaming.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/streaming/info.js")"></script>
     </body>
 </html>

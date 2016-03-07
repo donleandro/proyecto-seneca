@@ -8,6 +8,10 @@ scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq( jdbc , cache , ws , specs2 % Test, cache )
 
+pipelineStages := Seq(rjs, digest, gzip)
+
+RjsKeys.mainModule := "require-config"
+
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
 
 resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"  
