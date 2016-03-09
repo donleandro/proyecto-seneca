@@ -1,7 +1,7 @@
 @(title: String)(content: Html)
 <!DOCTYPE html>
 
-<html ng-controller="MainCtrl">
+<html ng-cloak ng-controller="MainCtrl">
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
         <title>{{MetaTitle}}</title>
         <meta name="description" content="{{MetaDescription}}" />
@@ -40,7 +40,7 @@
 
 
     </head>
-    <body ng-cloak class="seneca-project">
+    <body class="seneca-project">
         <!-- Facebook -->
         <script>
                 window.fbAsyncInit = function() {
