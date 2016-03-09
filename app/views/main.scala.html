@@ -10,6 +10,8 @@
         <meta property="og:type"               content="website" />
         <meta property="og:title"              content="Proyecto Seneca" />
         <meta property="og:image"              content="http://www.proyectoseneca.com@routes.Assets.versioned("images/SenecaLogo.jpg")" />
+        <meta proterty="og:description"        content="Proyecto Séneca nace con el ánimo de suplir la necesidad de emisión de la Universidad de los Andes, generando contenido entre la comunidad y el país." />
+        <meta property="fb:app_id"             content="1283018718382171">
 
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("dist/css/bootstrap.min.css")">
         <meta name="fragment" content="!" />
@@ -39,6 +41,25 @@
 
     </head>
     <body ng-cloak class="seneca-project">
+        <!-- Facebook -->
+        <script>
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId      : '1283018718382171',
+                        xfbml      : true,
+                        version    : 'v2.5'
+                    });
+                };
+
+                (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!-- End Facebook -->
         @content
         <script data-main="@routes.Assets.versioned("javascripts/require-config.js")"
         src="@routes.Assets.versioned("components/requirejs/require.js")"></script>
