@@ -8,13 +8,13 @@ import play.api.mvc.{RequestHeader, Action, Controller}
 import models.formatter.WebPack._
 import play.api.cache.Cached
 import play.api.Play.current
-import services.StreamingInfo
+import services.StreamingInfoService
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object StreamingInfoCtrl extends Controller{
 
   //Imports
-  val streamingInfo = new StreamingInfo
+  val streamingInfo = new StreamingInfoService
 
   def getInfoFromAirPlay = Cached( requestParameter(_) , 10){
     Action.async {

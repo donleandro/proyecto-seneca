@@ -12,7 +12,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
   * Created by davidmesa on 2/28/16.
   */
 @Singleton
-class Program {
+class ProgramService {
 
   val WordPressUrl = "http://wordpress.proyectoseneca.com/?json="
   val format = new java.text.SimpleDateFormat("yyyyMMdd")

@@ -16,7 +16,7 @@ import play.api.mvc._
   * Created by davidmesa on 2/6/16.
   */
 @Singleton
-class StreamingInfo {
+class StreamingInfoService {
 
   val AirTimeUrl = "http://www.intervals.xyz/api/live-info"
   val LastFMUrl = "http://ws.audioscrobbler.com/2.0/?api_key=bbed8d87ebb5735fba13521f4d07ba8c&method=track.getInfo&track="

@@ -7,7 +7,7 @@ import play.api.cache.Cached
 import play.api.libs.json.Json
 import play.api.mvc.{RequestHeader, Action, Controller}
 import models.formatter.WebPack._
-import services.Program
+import services.ProgramService
 import play.api.Play.current
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -15,7 +15,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 object ProgramCtrl extends Controller{
 
   //Imports
-  val programService = new Program
+  val programService = new ProgramService
 
   def getPrograms = Cached( requestParameter(_) , 14400) {
     Action.async {

@@ -23,3 +23,11 @@ case class ProgramExtended (
                              email: String,
                              episodes: List[Episode]
                            )
+
+case class ProgramLight (
+                          slug : String,
+                          name: String,
+                          image: String,
+                          producers: List[String],
+                          lastEpisode: Episode
+                        )

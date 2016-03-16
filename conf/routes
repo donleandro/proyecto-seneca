@@ -13,6 +13,7 @@ GET     /views/program              controllers.NavigationCtrl.program
 GET     /views/aboutUs              controllers.NavigationCtrl.aboutUs
 
 # API
+GET     /api/homeInfo               controllers.api.HomeCtrl.getHomeEpisodes()
 GET     /api/airtimeInfo            controllers.api.StreamingInfoCtrl.getInfoFromAirPlay()
 GET     /api/programs               controllers.api.ProgramCtrl.getPrograms()
 GET     /api/programs/:slug         controllers.api.ProgramCtrl.getProgram(slug:String)
