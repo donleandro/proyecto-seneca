@@ -4,16 +4,22 @@
 'use strict';
 define([
     'angular',
-    'angularRoute'
+    'angularRoute',
+    'Home/services'
 ], function(angular) {
-    angular.module('radio.home', ['ngRoute'])
+    angular.module('radio.home', ['ngRoute', 'homeServices'])
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.when('/', {
                 templateUrl: '/views/home',
                 controller: 'HomeCtrl'
             });
         }])
-        .controller('HomeCtrl', ['$scope',function($scope) {
-            $scope.test = "Ok Home";
-        }]);
+        .controller('HomeCtrl', ['$scope', 'HomeInfo',
+            function($scope, HomeInfo) {
+                HomeInfo.getInfo().$promise.then(function(homeInfo){
+                    $scope.homeInfo = homeInfo;
+                    $scope.selected = homeInfo[0];
+                });
+            }
+        ]);
 });
