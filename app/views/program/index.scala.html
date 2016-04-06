@@ -2,7 +2,22 @@
     <div class="col-xs-offset-1 col-xs-10">
         <div class="row">
             <div class="col-xs-12 text-center">
-                <h1 ng-repeat="program in programs"><a href="" ng-click="go('/programs/'+program.slug)">*{{program.name}}</a></h1>
+                <h1 class="program-title">Programas</h1>
+            </div>
+            <div ng-repeat="program in programs" class="col-lg-4 col-md-6 programs-img-box" ng-click="go('/programs/'+program.slug)" ng-mouseover="hoverProgram(program.slug)" ng-mouseleave="leaveProgram(program.slug)">
+                <img ng-src="{{program.image}}" class="img-responsive programs-img" id="img-{{program.slug}}">
+                <div class="programs-img-text">
+                    <p>{{program.name}}</p>
+                </div>
+                <div class="programs-img-slogan transparent" id="slogan-{{program.slug}}">
+                    <p>{{program.slogan}}</p>
+                </div>
+            </div>
+            <div ng-repeat="program in programs" class="col-lg-4 col-md-6 programs-img-box" ng-click="go('/programs/'+program.slug)">
+                <img ng-src="{{program.image}}" class="img-responsive programs-img">
+            </div>
+            <div ng-repeat="program in programs" class="col-lg-4 col-md-6 programs-img-box" ng-click="go('/programs/'+program.slug)">
+                <img ng-src="{{program.image}}" class="img-responsive programs-img">
             </div>
         </div>
     </div>

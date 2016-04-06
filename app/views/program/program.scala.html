@@ -19,6 +19,9 @@
     </div>
     <div class="row">
       <div class="col-md-8 col-sm-12">
+        <div class="col-xs-12 text-center" ng-if="program.episodes.length == 0">
+          <h1>Esperanos...</h1>
+        </div>
         <div ng-repeat="episode in program.episodes">
           <div plangular="{{episode.soundcloudUrl}}" class="col-xs-12 program-episode-wrap">
             <div class="col-sm-3 col-xs-12 program-episode-left-wrap">

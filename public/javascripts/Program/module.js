@@ -24,14 +24,25 @@ define([
         .controller('ProgramsCtrl', ['$scope', '$location', 'Programs',
             function($scope, $location, Programs) {
 
-            Programs.programs().$promise.then(function(programs){
-                $scope.programs = programs;
-            });
+                Programs.programs().$promise.then(function(programs){
+                    $scope.programs = programs;
+                });
 
-            $scope.go = function ( path ) {
-                $location.path( path )
-            };
-        }])
+                $scope.go = function ( path ) {
+                    $location.path( path )
+                };
+                
+                $scope.hoverProgram = function (slug) {
+                    $('#slogan-'+slug).removeClass('transparent');
+                    $('#img-'+slug).addClass('dark')
+                }
+
+                $scope.leaveProgram = function (slug) {
+                    $('#slogan-'+slug).addClass('transparent');
+                    $('#img-'+slug).removeClass('dark')
+                }
+
+            }])
         .controller('ProgramCtrl', ['$scope', '$routeParams', 'Programs',function($scope, $routeParams, Programs) {
             Programs.program($routeParams).$promise.then(function(program){
                 $scope.program = program;
