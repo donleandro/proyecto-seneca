@@ -30,6 +30,7 @@ function hideSongInfo() {
 function setProgram(songInfo) {
     $("#program-image").attr("src", songInfo.program.url);
     $("#program-name").html(songInfo.program.name);
+    $("#air-state").html("On Air");
     airtimeInfoGlobal = songInfo
     if(programTimer) clearTimeout(programTimer);
     animateUpdate(songInfo)
@@ -37,9 +38,8 @@ function setProgram(songInfo) {
 
 function getSongInfo(delay) {
     window.setTimeout(function () {
-        console.log("Entra");
         $.getJSON("/api/airtimeInfo", function(airtimeInfo) {
-            var nextDelay = 15000; // ask every 30 seconds if no song is broadcasting
+            var nextDelay = 15000; // ask every 15 seconds if no song is broadcasting
             if(!$.isEmptyObject(airtimeInfo)) {
                 if(typeof airtimeInfo.program != "undefined")
                     setProgram(airtimeInfo);
@@ -53,6 +53,9 @@ function getSongInfo(delay) {
                     // no songs broadcasting, clean up
                     hideSongInfo();
                 }
+            }
+            else {
+                $("#air-state").html("Off Air");
             }
             getSongInfo(nextDelay);
         });

@@ -17,13 +17,13 @@ object ProgramCtrl extends Controller{
   //Imports
   val programService = new ProgramService
 
-  def getPrograms = Cached( requestParameter(_) , 14400) {
+  def getPrograms = Cached( requestParameter(_) , 10) {
     Action.async {
       programService.getPrograms().map({programs => Ok(Json.toJson(programs))})
     }
   }
 
-  def getProgram(slug: String) = Cached( requestParameter(_) , 14400) {
+  def getProgram(slug: String) = Cached( requestParameter(_) , 10) {
     Action.async {
       programService.getProgram(slug).map({program => Ok(Json.toJson(program))})
     }

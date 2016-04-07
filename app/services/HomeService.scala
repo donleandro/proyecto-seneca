@@ -38,8 +38,6 @@ class HomeService {
                             (attachment \ "id").as[Int] -> (attachment \ "url").as[String]
                         }).toMap
 
-                        println((program\"title").as[String])
-
                         ProgramLight(
                           (program\"slug").as[String],
                           (program\"title").as[String],

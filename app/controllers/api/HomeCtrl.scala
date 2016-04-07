@@ -18,7 +18,7 @@ object HomeCtrl extends Controller{
   //Imports
   val homeService = new HomeService
 
-  def getHomeEpisodes = Cached( requestParameter(_) , 14400) {
+  def getHomeEpisodes = Cached( requestParameter(_) , 10) {
     Action.async {
       homeService.getHomeInfo().map({lightPrograms => Ok(Json.toJson(lightPrograms))})
     }

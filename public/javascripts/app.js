@@ -29,6 +29,23 @@ define([
         $scope.go = function ( path ) {
             $location.path( path )
         };
+
+        var loadProgramInfo = function (delay) {
+            window.setTimeout(function () {
+                $.getJSON("/api/airtimeInfo", function(airtimeInfo) {
+                    var nextDelay = 15000; // ask every 15 seconds if no song is broadcasting
+                    if(!$.isEmptyObject(airtimeInfo)) {
+                        if(typeof airtimeInfo.program != "undefined") {
+                            $scope.aTProgramName = airtimeInfo.program.name
+                        }
+                    }
+                    loadProgramInfo(nextDelay);
+                });
+            }, delay);
+        }
+
+        loadProgramInfo(0);
+
     }]).
     controller('HeaderCtrl', ['$scope','$window', '$location', function($scope,$window, $location){
 
