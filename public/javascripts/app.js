@@ -38,10 +38,6 @@ define([
             if(isSafari) height = height + 47;
             $window.open('/streaming', 'PSPlayer', 'height='+height+',width=320');
         };
-        
-        $scope.go = function ( path ) {
-            $location.path( path )
-        };
     }]).
     controller('FooterCtrl', ['$scope', function($scope){
         $scope.mailingListToggle = false;
