@@ -27,10 +27,6 @@ define([
                 Programs.programs().$promise.then(function(programs){
                     $scope.programs = programs;
                 });
-
-                $scope.go = function ( path ) {
-                    $location.path( path )
-                };
                 
                 $scope.hoverProgram = function (slug) {
                     $('#slogan-'+slug).removeClass('transparent');

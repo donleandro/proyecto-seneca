@@ -23,9 +23,12 @@ define([
         // use the HTML5 History API
         $locationProvider.html5Mode(true).hashPrefix("!");
     }]).
-    controller('MainCtrl', ['$scope', function($scope){
+    controller('MainCtrl', ['$scope', '$location', function($scope, $location){
         $scope.MetaTitle = "Proyecto Seneca";
         $scope.MetaDescription = "Proyecto Séneca nace con el ánimo de suplir la necesidad de emisión de la Universidad de los Andes, generando contenido entre la comunidad y el país.";
+        $scope.go = function ( path ) {
+            $location.path( path )
+        };
     }]).
     controller('HeaderCtrl', ['$scope','$window', '$location', function($scope,$window, $location){
 

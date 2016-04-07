@@ -16,10 +16,31 @@ define([
         }])
         .controller('HomeCtrl', ['$scope', 'HomeInfo',
             function($scope, HomeInfo) {
+
+                var selectedIndex = 0;
+                
                 HomeInfo.getInfo().$promise.then(function(homeInfo){
                     $scope.homeInfo = homeInfo;
                     $scope.selected = homeInfo[0];
                 });
+
+                $scope.colNumber = function (max) {
+                    if(max < $scope.homeInfo.length){
+                        return 12/ max;
+                    }
+                    else {
+                        return 12/ $scope.homeInfo.length
+                    }
+                }
+
+                $scope.selectProgram = function (index) {
+                    if(index != selectedIndex){
+                        $('#home-program-'+selectedIndex).removeClass('selected');
+                        $('#home-program-'+index).addClass('selected');
+                        $scope.selected = $scope.homeInfo[index];
+                        selectedIndex = index;
+                    }
+                }
             }
         ]);
 });

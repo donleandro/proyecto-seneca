@@ -25,9 +25,9 @@ class HomeService {
           Future.sequence((episodesResponse.json \ "posts").as[List[JsValue]].map({
             episode =>
               val episodeCustomFields = episode \ "custom_fields"
-              val programCategory = (episode \ "categories").as[List[JsValue]].map(_.\("slug").as[String]).filter(_ != "home")
+              val programCategory = (episode \ "categories").as[List[JsValue]].map(_.\("id").as[Int]).filter(_ != 2)
               if(programCategory.length == 1){
-                WS.url(WordPressUrl+"get_posts&post_type=program&category_id="+programCategory.head)
+                WS.url(WordPressUrl+"get_posts&post_type=program&cat="+programCategory.head)
                   .get().map({
                   programResponse =>
                     (programResponse.json \ "posts").as[List[JsValue]].map({
@@ -37,6 +37,8 @@ class HomeService {
                           attachment =>
                             (attachment \ "id").as[Int] -> (attachment \ "url").as[String]
                         }).toMap
+
+                        println((program\"title").as[String])
 
                         ProgramLight(
                           (program\"slug").as[String],
