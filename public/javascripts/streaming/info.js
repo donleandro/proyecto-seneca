@@ -5,6 +5,7 @@
 //Variables used for progress bar
 var programTimer;
 var airtimeInfoGlobal;
+var oldImgUrl;
 
 $(document).ready(function () {
     getSongInfo(0); // get the info immediately at start
@@ -28,9 +29,12 @@ function hideSongInfo() {
 }
 
 function setProgram(songInfo) {
-    $("#program-image").attr("src", songInfo.program.url);
+    if(!oldImgUrl || oldImgUrl != songInfo.program.url) {
+        $("#program-image").attr("src", songInfo.program.url);
+        oldImgUrl = songInfo.program.url;
+    }
     $("#program-name").html(songInfo.program.name);
-    $("#air-state").html("On Air");
+    $("#air-state").html("Al Aire");
     airtimeInfoGlobal = songInfo
     if(programTimer) clearTimeout(programTimer);
     animateUpdate(songInfo)

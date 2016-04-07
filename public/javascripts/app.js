@@ -30,6 +30,9 @@ define([
             $location.path( path )
         };
 
+        $scope.aTProgramName = "Proyecto Séneca";
+        $scope.aTState = "Off Air";
+
         var loadProgramInfo = function (delay) {
             window.setTimeout(function () {
                 $.getJSON("/api/airtimeInfo", function(airtimeInfo) {
@@ -37,7 +40,11 @@ define([
                     if(!$.isEmptyObject(airtimeInfo)) {
                         if(typeof airtimeInfo.program != "undefined") {
                             $scope.aTProgramName = airtimeInfo.program.name
+                            $scope.aTState = "Al Aire";
                         }
+                    }else{
+                        $scope.aTProgramName = "Proyecto Séneca";
+                        $scope.aTState = "Off Air";
                     }
                     loadProgramInfo(nextDelay);
                 });

@@ -15,7 +15,10 @@
 }
 
 .play-btn {
-    background: url("../images/btnPlayPlayer.png");
+    background-image: url("../images/btnPlayPlayer.png");
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-color: white;
     border: none;
     margin-left: 38px;
     margin-top: 15px;
@@ -24,11 +27,11 @@
 }
 
 .jp-state-playing .play-btn {
-    background: url("../images/btnStopPlayer.png");
+    background-image: url("../images/btnStopPlayer.png");
 }
 
 .jp-state-playing.jp-state-seeking .play-btn {
-    background: url("../images/btnLoadingPlayer.png");
+    background-image: url("../images/btnLoadingPlayer.png");
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
@@ -41,7 +44,10 @@
 button:focus {outline:0;}
 
 .volume-btn {
-    background: url("../images/btnVolumenPlayer.png");
+    background-image: url("../images/btnVolumenPlayer.png");
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-color: white;
     cursor:pointer;
     border: none;
     margin-top: 15px;
@@ -51,7 +57,7 @@ button:focus {outline:0;}
 }
 
 .jp-state-muted .volume-btn{
-    background: url("../images/btnMutePlayer.png");
+    background-image: url("../images/btnMutePlayer.png");
 }
 
 .progressSize {
@@ -97,7 +103,7 @@ button:focus {outline:0;}
     border-radius: 10px;
     margin-left: -7px;
     margin-top: 20px;
-    background-color: red;
+    background-color: #AD1F24;
     color: white;
     height: 27px;
     width: 80px;
