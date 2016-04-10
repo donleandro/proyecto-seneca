@@ -26,7 +26,7 @@
           <div plangular="{{episode.soundcloudUrl}}" class="col-xs-12 program-episode-wrap">
             <div class="col-sm-3 col-xs-12 program-episode-left-wrap">
               <h3>{{episode.title}}</h3>
-              <h6>Abril 10</h6>
+              <h6>{{episode.transmissionDate | date:'MMMM d' : 'UTC'}}</h6>
               <button ng-click="playPause()" class="program-play-btn"><img src="@routes.Assets.versioned("images/btnProgramPlay.png")"></button>
               <div class="row">
                 <div class="col-sm-5 col-xs-7 text-left">
