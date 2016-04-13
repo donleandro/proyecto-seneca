@@ -18,6 +18,9 @@ GET     /api/airtimeInfo            controllers.api.StreamingInfoCtrl.getInfoFro
 GET     /api/programs               controllers.api.ProgramCtrl.getPrograms()
 GET     /api/programs/:slug         controllers.api.ProgramCtrl.getProgram(slug:String)
 
+# SEO
+GET     /sitemap.xml                controllers.NavigationCtrl.siteMap
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
