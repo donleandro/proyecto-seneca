@@ -27,7 +27,10 @@
             <div class="col-sm-3 col-xs-12 program-episode-left-wrap">
               <h3>{{episode.title}}</h3>
               <h6>{{episode.transmissionDate | date:'MMMM d' : 'UTC'}}</h6>
-              <button ng-click="playPause()" class="program-play-btn"><img src="@routes.Assets.versioned("images/btnProgramPlay.png")"></button>
+              <button ng-click="playPause()" class="program-play-btn">
+                <img ng-if="player.playing !== track.src" src="@routes.Assets.versioned("images/btnProgramPlay.png")">
+                <img ng-if="player.playing === track.src" src="@routes.Assets.versioned("images/btnProgramStop.png")">
+              </button>
               <div class="row">
                 <div class="col-sm-5 col-xs-7 text-left">
                             </div>
@@ -47,7 +50,7 @@
                     <a
                     socialshare
                     socialshare-provider="facebook"
-                    socialshare-description="720kb AngularJS Socialshare"
+                    socialshare-description="Proyecto Séneca"
                     socialshare-url="{{episode.soundcloudUrl}}">
                       <img src="@routes.Assets.versioned("images/facebook.png")" class="img-responsive">
                     </a>
@@ -56,7 +59,7 @@
                     <a
                     socialshare
                     socialshare-provider="linkedin"
-                    socialshare-text="720kb"
+                    socialshare-text="Proyecto Séneca"
                     socialshare-url="{{episode.soundcloudUrl}}"
                     socialshare-description="Description muy completa">
                       <img src="@routes.Assets.versioned("images/linkedin.png")" class="img-responsive">
@@ -66,7 +69,7 @@
                     <a
                     socialshare
                     socialshare-provider="tumblr"
-                    socialshare-text="720kb AngularJS Socialshare"
+                    socialshare-text="Proyecto Séneca"
                     socialshare-url="{{episode.soundcloudUrl}}">
                       <img src="@routes.Assets.versioned("images/tumblr.png")" class="img-responsive">
                     </a>
