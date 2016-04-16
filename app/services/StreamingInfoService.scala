@@ -3,11 +3,13 @@ package services
 import java.util.Calendar
 
 import com.google.inject.Singleton
-import models.{StreamInfo, APProgram, Song, APSong}
+import models.{APProgram, APSong, Song, StreamInfo}
 import models.formatter.WebPack._
+import play.api.Configuration
 import play.api.libs.json.JsValue
 import play.api.libs.ws.WS
 import play.api.Play.current
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import play.api.mvc._
@@ -17,9 +19,9 @@ import play.api.mvc._
   */
 @Singleton
 class StreamingInfoService {
-
+  val lastFmKey = play.Play.application.configuration.getString("lastFmKey")
   val AirTimeUrl = "http://www.intervals.xyz/api/live-info"
-  val LastFMUrl = "http://ws.audioscrobbler.com/2.0/?api_key=bbed8d87ebb5735fba13521f4d07ba8c&method=track.getInfo&track="
+  val LastFMUrl = s"""http://ws.audioscrobbler.com/2.0/?api_key=$lastFmKey&method=track.getInfo&track="""
   val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
 
   def requestParameter(header: RequestHeader): String ={
