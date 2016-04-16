@@ -1,9 +1,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://www.proyectoseneca.com</loc>
+        <loc>http://www.proyectoseneca.com/programs/bombo-clap-2</loc>
     </url>
     <url>
-        <loc>http://www.proyectoseneca.com/programs</loc>
+        <loc>http://www.proyectoseneca.com/programs/b-l-a-s-t-2</loc>
     </url>
     <url>
         <loc>http://www.proyectoseneca.com/programs/expedientes-t-i-a</loc>
@@ -15,9 +15,15 @@
         <loc>http://www.proyectoseneca.com/programs/covers</loc>
     </url>
     <url>
-        <loc>http://www.proyectoseneca.com/programs/bombo-clap-2</loc>
+        <loc>http://www.proyectoseneca.com</loc>
     </url>
     <url>
-        <loc>http://www.proyectoseneca.com/programs/b-l-a-s-t-2</loc>
+        <loc>http://www.proyectoseneca.com/programs</loc>
+    </url>
+    <url>
+        <loc>http://www.proyectoseneca.com/streaming</loc>
+    </url>
+    <url>
+        <loc>http://www.proyectoseneca.com/aboutUs</loc>
     </url>
 </urlset>
