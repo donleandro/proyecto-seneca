@@ -6,24 +6,30 @@
 define([
     'angular', 'jquery', 'bootstrap',
     'angularRoute', 'socialShare',
-    'Home/module', 'Program/module'
+    'Home/module', 'Program/module', 'ngmixpanel'
 ], function(angular, $) {
     return angular.module('radio', [
-        'ngRoute', '720kb.socialshare',
+        'ngRoute', '720kb.socialshare', 'analytics.mixpanel',
         'radio.home', 'radio.program'
     ]).
-    config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
+    config(['$routeProvider','$locationProvider', '$mixpanelProvider',
+        function($routeProvider, $locationProvider, $mixpanelProvider) {
 
-        $routeProvider.when('/aboutUs', {
-            templateUrl: '/views/aboutUs'
-        });
+            $routeProvider.when('/aboutUs', {
+                templateUrl: '/views/aboutUs'
+            });
 
-        $routeProvider.otherwise({redirectTo: '/'});
+            $routeProvider.otherwise({redirectTo: '/'});
 
-        // use the HTML5 History API
-        $locationProvider.html5Mode(true).hashPrefix("!");
-    }]).
+            // use the HTML5 History API
+            $locationProvider.html5Mode(true).hashPrefix("!");
+
+            //Mixpanel
+            $mixpanelProvider.apiKey('73be08dba9e27975c95af926817c907d');
+
+        }]).
     controller('MainCtrl', ['$scope', '$location', function($scope, $location){
+
         $scope.MetaTitle = "Proyecto Seneca";
         $scope.MetaDescription = "Proyecto Séneca nace con el ánimo de suplir la necesidad de emisión de la Universidad de los Andes, generando contenido entre la comunidad y el país.";
         $scope.go = function ( path ) {
@@ -54,9 +60,10 @@ define([
         loadProgramInfo(0);
 
     }]).
-    controller('HeaderCtrl', ['$scope','$window', '$location', function($scope,$window, $location){
+    controller('HeaderCtrl', ['$scope','$window', '$mixpanel', function($scope,$window, $mixpanel){
 
         $scope.listenClick = function () {
+            $mixpanel.track('GoTo-Streaming');
             var height=499;
             var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
             if(isSafari) height = height + 47;

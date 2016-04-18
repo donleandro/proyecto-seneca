@@ -12,7 +12,9 @@ require.config({
         angularSanitize: '../components/angular-sanitize/angular-sanitize.min',
         text: '../components/requirejs-text/text',
         plangular: '../components/plangular/dist/plangular.min',
-        socialShare: '../components/angular-socialshare/dist/angular-socialshare.min'
+        socialShare: '../components/angular-socialshare/dist/angular-socialshare.min',
+        mixpanel: '../components/mixpanel/mixpanel-jslib-snippet.min',
+        ngmixpanel: '../components/angular-mixpanel/dist/angular-mixpanel.min'
     },
     shim: {
         'angular' : {'exports' : 'angular'},
@@ -25,7 +27,8 @@ require.config({
         'angularResource' : { "deps" : ['angular']},
         'angularSanitize' : { "deps" : ['angular']},
         'plangular' : { "deps" : ['angular']},
-        'socialShare' : { "deps" : ['angular'] }
+        'socialShare' : { "deps" : ['angular'] },
+        'ngmixpanel' : {"deps" : ['angular', 'mixpanel']}
     },
     priority: [
         "angular"

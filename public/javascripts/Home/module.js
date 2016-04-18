@@ -14,8 +14,11 @@ define([
                 controller: 'HomeCtrl'
             });
         }])
-        .controller('HomeCtrl', ['$scope', 'HomeInfo',
-            function($scope, HomeInfo) {
+        .controller('HomeCtrl', ['$scope', 'HomeInfo', '$mixpanel',
+            function($scope, HomeInfo, $mixpanel) {
+
+                //Mixpanel
+                $mixpanel.track('Open Home');
 
                 var selectedIndex = 0;
                 
@@ -39,7 +42,18 @@ define([
                         $('#home-program-'+index).addClass('selected');
                         $scope.selected = $scope.homeInfo[index];
                         selectedIndex = index;
+
+                        //Mixpanel
+                        $mixpanel.track('Select-' + $scope.selected.name + '-Home');
                     }
+                }
+
+                $scope.goToProgram = function () {
+
+                    //Mixpanel
+                    $mixpanel.track('GoTo-' + $scope.selected.name + '-Home');
+
+                    $scope.go('/programs/'+$scope.selected.slug)
                 }
             }
         ]);

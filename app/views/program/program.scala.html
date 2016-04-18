@@ -27,7 +27,7 @@
             <div class="col-sm-3 col-xs-12 program-episode-left-wrap">
               <h3>{{episode.title}}</h3>
               <h6>{{episode.transmissionDate | date:'MMMM d' : 'UTC'}}</h6>
-              <button ng-click="playPause()" class="program-play-btn">
+              <button ng-click="playPause(); registerPlay(episode)" class="program-play-btn">
                 <img ng-if="player.playing !== track.src" src="@routes.Assets.versioned("images/btnProgramPlay.png")">
                 <img ng-if="player.playing === track.src" src="@routes.Assets.versioned("images/btnProgramStop.png")">
               </button>

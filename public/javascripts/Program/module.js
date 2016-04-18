@@ -21,27 +21,53 @@ define([
             });
             plangularConfigProvider.clientId = 'ddb5c1c24a58abe1a706af0425eda325';
         }])
-        .controller('ProgramsCtrl', ['$scope', '$location', 'Programs',
-            function($scope, $location, Programs) {
+        .controller('ProgramsCtrl', ['$scope', '$location', 'Programs', '$mixpanel',
+            function($scope, $location, Programs, $mixpanel) {
+
+                //Mixpanel
+                $mixpanel.track('Open Programs');
+
 
                 Programs.programs().$promise.then(function(programs){
                     $scope.programs = programs;
                 });
-                
+
                 $scope.hoverProgram = function (slug) {
                     $('#slogan-'+slug).removeClass('transparent');
                     $('#img-'+slug).addClass('dark')
-                }
+                };
 
                 $scope.leaveProgram = function (slug) {
                     $('#slogan-'+slug).addClass('transparent');
                     $('#img-'+slug).removeClass('dark')
+                };
+
+                $scope.goToProgram = function (program) {
+
+                    //Mixpanel
+                    $mixpanel.track('GoTo-' + program.name + '-Programs');
+
+                    $scope.go('/programs/'+program.slug);
                 }
 
             }])
-        .controller('ProgramCtrl', ['$scope', '$routeParams', 'Programs',function($scope, $routeParams, Programs) {
-            Programs.program($routeParams).$promise.then(function(program){
-                $scope.program = program;
-            });
-        }]);
+        .controller('ProgramCtrl', ['$scope', '$routeParams', 'Programs', '$mixpanel',
+            function($scope, $routeParams, Programs, $mixpanel) {
+
+                Programs.program($routeParams).$promise.then(function(program){
+
+                    //Mixpanel
+                    $mixpanel.track('Open Program-' + program.name);
+
+                    $scope.program = program;
+                });
+                
+                $scope.registerPlay = function (episode) {
+                    
+                    //Mixpanel
+                    $mixpanel.track('PlayPause-' + episode.title);
+                    
+                }
+                
+            }]);
 });

@@ -4,7 +4,7 @@
             <div class="col-xs-12 text-center">
                 <h1 class="program-title">Programas</h1>
             </div>
-            <div ng-repeat="program in programs" class="col-lg-4 col-sm-6 col-xs-12 programs-img-box" ng-click="go('/programs/'+program.slug)" ng-mouseover="hoverProgram(program.slug)" ng-mouseleave="leaveProgram(program.slug)">
+            <div ng-repeat="program in programs" class="col-lg-4 col-sm-6 col-xs-12 programs-img-box" ng-click="goToProgram(program)" ng-mouseover="hoverProgram(program.slug)" ng-mouseleave="leaveProgram(program.slug)">
                 <div class="programs-img-bg">
                     <img ng-src="{{program.image}}" class="img-responsive programs-img" id="img-{{program.slug}}">
                 </div>
