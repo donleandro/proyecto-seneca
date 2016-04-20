@@ -19,7 +19,7 @@ define([
                 templateUrl: '/views/aboutUs'
             });
 
-            $routeProvider.when('/convocatoria', {
+            $routeProvider.when('/convocatorias/lavozoficial', {
                 templateUrl: '/views/convocatoria'
             })
 
