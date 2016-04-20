@@ -19,7 +19,7 @@ class HomeService {
   val format = new java.text.SimpleDateFormat("yyyyMMdd")
 
   def getHomeInfo(): Future[List[ProgramLight]] = {
-    WS.url(WordPressUrl+"get_category_posts&post_type=episode&category_slug=home")
+    WS.url(WordPressUrl+"get_category_posts&post_type=episode&category_slug=home&count=4")
       .get().map({
         episodesResponse =>
           Future.sequence((episodesResponse.json \ "posts").as[List[JsValue]].map({

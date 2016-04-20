@@ -19,6 +19,10 @@ define([
                 templateUrl: '/views/aboutUs'
             });
 
+            $routeProvider.when('/convocatoria', {
+                templateUrl: '/views/convocatoria'
+            })
+
             $routeProvider.otherwise({redirectTo: '/'});
 
             // use the HTML5 History API
@@ -28,7 +32,7 @@ define([
             $mixpanelProvider.apiKey('73be08dba9e27975c95af926817c907d');
 
         }]).
-    controller('MainCtrl', ['$scope', '$location', function($scope, $location){
+    controller('MainCtrl', ['$scope', '$location', '$window', function($scope, $location, $window){
 
         $scope.MetaTitle = "Proyecto Seneca";
         $scope.MetaDescription = "Proyecto Séneca nace con el ánimo de suplir la necesidad de emisión de la Universidad de los Andes, generando contenido entre la comunidad y el país.";
@@ -55,9 +59,12 @@ define([
                     loadProgramInfo(nextDelay);
                 });
             }, delay);
-        }
+        };
 
         loadProgramInfo(0);
+
+        $scope.widthWindow = $window.innerWidth;
+
 
     }]).
     controller('HeaderCtrl', ['$scope','$window', '$mixpanel', function($scope,$window, $mixpanel){

@@ -36,6 +36,10 @@ object NavigationCtrl extends Controller {
     Ok(views.html.aboutUs())
   }
 
+  def convocatoria = Action{
+    Ok(views.html.convocatoria())
+  }
+
   def siteMap = Action {
     Ok(views.xml.sitemap.render())
   }
