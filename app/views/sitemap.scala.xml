@@ -1,5 +1,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+        <loc>http://www.proyectoseneca.com</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>http://www.proyectoseneca.com/programs</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>http://www.proyectoseneca.com/streaming</loc>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+        <loc>http://www.proyectoseneca.com/aboutUs</loc>
+    </url>
+    <url>
         <loc>http://www.proyectoseneca.com/programs/bombo-clap-2</loc>
     </url>
     <url>
@@ -15,15 +34,11 @@
         <loc>http://www.proyectoseneca.com/programs/covers</loc>
     </url>
     <url>
-        <loc>http://www.proyectoseneca.com</loc>
+        <loc> http://proyectoseneca.com/programs/generation-wild</loc>
     </url>
     <url>
-        <loc>http://www.proyectoseneca.com/programs</loc>
+        <loc> http://proyectoseneca.com/programs/panela-records-podcast</loc>
     </url>
-    <url>
-        <loc>http://www.proyectoseneca.com/streaming</loc>
-    </url>
-    <url>
-        <loc>http://www.proyectoseneca.com/aboutUs</loc>
-    </url>
+
+
 </urlset>
