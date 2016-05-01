@@ -34,7 +34,12 @@ define([
         }]).
     controller('MainCtrl', ['$scope', '$location', '$window', function($scope, $location, $window){
 
-        $scope.MetaTitle = "Proyecto Seneca";
+        $scope.MetaTitle = 'Proyecto Séneca';
+
+        $scope.$on('MetaTitle', function (event, data) {
+           $scope.MetaTitle = data;
+        });
+
         $scope.MetaDescription = "Proyecto Séneca nace con el ánimo de suplir la necesidad de emisión de la Universidad de los Andes, generando contenido entre la comunidad y el país.";
         $scope.go = function ( path ) {
             $location.path( path )

@@ -17,6 +17,8 @@ define([
         .controller('HomeCtrl', ['$scope', 'HomeInfo', '$mixpanel',
             function($scope, HomeInfo, $mixpanel) {
 
+                $scope.$emit("MetaTitle", "Proyecto Séneca");
+
                 //Mixpanel
                 $mixpanel.track('Open Home');
 

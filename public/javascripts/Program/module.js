@@ -24,6 +24,8 @@ define([
         .controller('ProgramsCtrl', ['$scope', '$location', 'Programs', '$mixpanel',
             function($scope, $location, Programs, $mixpanel) {
 
+                $scope.$emit("MetaTitle", "Programas - Proyecto Séneca");
+
                 //Mixpanel
                 $mixpanel.track('Open Programs');
 
@@ -60,6 +62,9 @@ define([
                     $mixpanel.track('Open Program-' + program.name);
 
                     $scope.program = program;
+
+                    $scope.$emit("MetaTitle", program.name + " - Proyecto Séneca");
+
                 });
                 
                 $scope.registerPlay = function (episode) {

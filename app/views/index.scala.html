@@ -1,10 +1,22 @@
-@()
-    @views.html.main("Seneca Project"){
-        <div id="wrap">
-            <div id="main">
-                <div ng-include="'/views/header'" ng-controller="HeaderCtrl"></div>
-                <div ng-view></div>
+@(title: String)
+@views.html.main(title){
+    <div id="wrap">
+        <div id="main">
+            <div ng-include="'/views/header'" ng-controller="HeaderCtrl"></div>
+            <div ng-view>
+                <a href="http://www.proyectoseneca.com/programs/panela-records-podcast"></a>
+                <a href="http://www.proyectoseneca.com/programs/generation-wild"></a>
+                <a href="http://www.proyectoseneca.com/programs/bombo-clap-2"></a>
+                <a href="http://www.proyectoseneca.com/programs/b-l-a-s-t-2"></a>
+                <a href="http://www.proyectoseneca.com/programs/expedientes-t-i-a"></a>
+                <a href="http://www.proyectoseneca.com/programs/el-proyector"></a>
+                <a href="http://www.proyectoseneca.com/programs/covers"></a>
+                <a href="http://www.proyectoseneca.com"></a>
+                <a href="http://www.proyectoseneca.com/programs"></a>
+                <a href="http://www.proyectoseneca.com/streaming"></a>
+                <a href="http://www.proyectoseneca.com/aboutUs"></a>
             </div>
         </div>
-        <div ng-include="'/views/footer'" ng-controller="FooterCtrl"></div>
-    }
+    </div>
+    <div ng-include="'/views/footer'" ng-controller="FooterCtrl"></div>
+}

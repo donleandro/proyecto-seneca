@@ -5,7 +5,15 @@ import play.api.mvc._
 object NavigationCtrl extends Controller {
 
   def main(any: String) = Action {
-    Ok(views.html.index())
+    if(any.contains("programs")) {
+      val urlInfo = any.split("/")
+      if(urlInfo.length == 2){
+        val nameWords = urlInfo.last.split("-").map(_.capitalize).mkString(" ").filter(!_.isDigit)
+        Ok(views.html.index( nameWords + " - Proyecto Séneca" ))
+      } else
+        Ok(views.html.index("Proyecto Séneca"))
+    } else
+      Ok(views.html.index("Proyecto Séneca"))
   }
 
   def header = Action {
